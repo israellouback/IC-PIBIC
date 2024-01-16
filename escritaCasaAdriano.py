@@ -22,7 +22,7 @@ def escrita_arquivos(lista_arquivos,lista_pisos,lista_cob,lista_paredes_ext,list
         linhas =arq.readlines()       #armazena todas linhas do arquivo
         for i, linha in enumerate(linhas): #pegar linha inicial e final do campo que queremos alterar
           if linha_i in linha:
-            ind_i= i
+            ind_i = i
           if linha_f in linha:
             ind_f = i
         #Manipula as os campos que queremos alterar
@@ -34,26 +34,25 @@ def escrita_arquivos(lista_arquivos,lista_pisos,lista_cob,lista_paredes_ext,list
         linhas[ind_i + 6 ] = setup_janela
         linhas[ind_i + 7 ] = linha_f
         for l in range(ind_i + 8,ind_f+1):
-            linhas[l] = ' ' +'\n'
+            linhas[l] = ' ' + '\n'
         # Verifica o valor de alguns indices para manter o controle das instancias
         if a == len(lista_paredes_int)-1 and j ==len(lista_cob)-1 and k == len(lista_pisos)-1:
             break;
         elif k == len(lista_pisos)-1 and j == len(lista_cob)-1:
-            a+=1
-            k=0
-            j=0
+            a += 1
+            k = 0
+            j = 0
         elif k == len(lista_cob)-1:
             k = 0
-            j+=1
+            j += 1
         else:
-            k+=1
+            k += 1
         #Reabre o arquivo para escrever td o conteudo com os campos alterados
         with open(arquivos,"w") as arq:
           arq.writelines(linhas)
           arq.close()
           #os.rename(arquivos,'instancia' + str(contador)+".idf")
-          contador+=1
-      print('safe')
+          contador += 1
 
 
     #Paredes Internas
@@ -65,7 +64,7 @@ parede_1 = ('Construction,' +'\n'
                 'Reboco1,                 !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_2 =('Construction,' +'\n'
+parede_2 = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco2e10e14,           !- Layer 2'+'\n'
@@ -73,7 +72,7 @@ parede_2 =('Construction,' +'\n'
                 'Reboco2e10e14,           !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_10 =('Construction,' +'\n'
+parede_10 = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco2e10e14,           !- Layer 2'+'\n'
@@ -81,7 +80,7 @@ parede_10 =('Construction,' +'\n'
                 'Reboco2e10e14,           !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_11 =('Construction,' +'\n'
+parede_11 = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco11,                !- Layer 2'+'\n'
@@ -89,7 +88,7 @@ parede_11 =('Construction,' +'\n'
                 'Reboco11,                !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_14 =('Construction,' +'\n'
+parede_14 = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco2e10e14,           !- Layer 2'+'\n'
@@ -97,7 +96,7 @@ parede_14 =('Construction,' +'\n'
                 'Reboco2e10e14,           !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_28 =('Construction,' +'\n'
+parede_28 = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco28,                !- Layer 2'+'\n'
@@ -105,19 +104,19 @@ parede_28 =('Construction,' +'\n'
                 'Reboco28,                !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_33 =('Construction,' +'\n'
+parede_33 = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'BlocoCeramico33,         !- Layer 2'+'\n'
                 'Pintura branca;          !- Layer 3'+'\n'+'\n')
 
-parede_34 =('Construction,' +'\n'
+parede_34 = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'BlocoCeramico10e11e34,   !- Layer 2'+'\n'
                 'Pintura branca;          !- Layer 3'+'\n'+'\n')
 
-parede_36int =('Construction,' +'\n'
+parede_36int = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'PainelGesso36,           !- Layer 2'+'\n'
@@ -125,7 +124,7 @@ parede_36int =('Construction,' +'\n'
                 'PainelGesso36,           !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_39int =('Construction,' +'\n'
+parede_39int = ('Construction,' +'\n'
                 'par_int,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'OBS,                     !- Layer 2'+'\n'
@@ -143,7 +142,7 @@ parede_1ext = ('Construction,' +'\n'
                 'Reboco1,                 !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_2ext =('Construction,' +'\n'
+parede_2ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco2e10e14,           !- Layer 2'+'\n'
@@ -151,7 +150,7 @@ parede_2ext =('Construction,' +'\n'
                 'Reboco2e10e14,           !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_10ext =('Construction,' +'\n'
+parede_10ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco2e10e14,           !- Layer 2'+'\n'
@@ -159,7 +158,7 @@ parede_10ext =('Construction,' +'\n'
                 'Reboco2e10e14,           !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_11ext =('Construction,' +'\n'
+parede_11ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco11,                !- Layer 2'+'\n'
@@ -167,7 +166,7 @@ parede_11ext =('Construction,' +'\n'
                 'Reboco11,                !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_14ext =('Construction,' +'\n'
+parede_14ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco2e10e14,           !- Layer 2'+'\n'
@@ -175,7 +174,7 @@ parede_14ext =('Construction,' +'\n'
                 'Reboco2e10e14,           !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_28ext =('Construction,' +'\n'
+parede_28ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'Reboco28,                !- Layer 2'+'\n'
@@ -183,19 +182,19 @@ parede_28ext =('Construction,' +'\n'
                 'Reboco28,                !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_33ext =('Construction,' +'\n'
+parede_33ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'BlocoCeramico33,         !- Layer 2'+'\n'
                 'Pintura branca;          !- Layer 3'+'\n'+'\n')
 
-parede_34ext =('Construction,' +'\n'
+parede_34ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura branca,          !- Outside Layer'+'\n'
                 'BlocoCeramico10e11e34,   !- Layer 2'+'\n'
                 'Pintura branca;          !- Layer 3'+'\n'+'\n')
 
-parede_36ext =('Construction,' +'\n'
+parede_36ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura externa,         !- Outside Layer'+'\n'
                 'Placa36e39,              !- Layer 2'+'\n'
@@ -203,7 +202,7 @@ parede_36ext =('Construction,' +'\n'
                 'PainelGesso36,           !- Layer 4'+'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
-parede_39ext =('Construction,' +'\n'
+parede_39ext = ('Construction,' +'\n'
                 'par_ext,                 !- Name'+'\n'
                 'Pintura externa,         !- Outside Layer'+'\n'
                 'Placa36e39,              !- Layer 2'+'\n'
@@ -212,61 +211,61 @@ parede_39ext =('Construction,' +'\n'
                 'Pintura branca;          !- Layer 5'+'\n'+'\n')
 
     #Pisos
-piso_2 =('Construction,' +'\n'
+piso_2 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Contrapiso,              !- Outside Layer'+'\n'
                 'TacoMadeira;             !- Layer 2'+'\n'+'\n' )
 
-piso_5 =('Construction,' +'\n'
+piso_5 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Contrapiso,              !- Outside Layer'+'\n'
                 'MadeiraLaminada;         !- Layer 2'+'\n'+'\n' )
 
-piso_7 =('Construction,' +'\n'
+piso_7 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Contrapiso,              !- Outside Layer'+'\n'
                 'Carpete;                 !- Layer 2'+'\n'+'\n' )
 
-piso_10 =('Construction,' +'\n'
+piso_10 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Laje,                    !- Outside Layer'+'\n'
                 'Contrapiso,              !- Layer 2'+'\n'
                 'Vinil;                   !- Layer 3'+'\n'+'\n' )
 
-piso_14 =('Construction,' +'\n'
+piso_14 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Laje,                    !- Outside Layer'+'\n'
                 'Contrapiso,              !- Layer 2'+'\n'
                 'Carpete;                 !- Layer 3'+'\n'+'\n' )
 
-piso_16 =('Construction,' +'\n'
+piso_16 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Laje,                    !- Outside Layer'+'\n'
                 'MantaTermAcPiso,         !- Layer 2'+'\n'
                 'Contrapiso,              !- Layer 3'+'\n'
                 'TacoMadeira;             !- Layer 4'+'\n'+'\n')
 
-piso_18 =('Construction,' +'\n'
+piso_18 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Laje,                    !- Outside Layer'+'\n'
                 'MantaTermAcPiso,         !- Layer 2'+'\n'
                 'Contrapiso,              !- Layer 3'+'\n'
                 'Cimento;                 !- Layer 4'+'\n'+'\n')
 
-piso_19 =('Construction,' +'\n'
+piso_19 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Laje,                    !- Outside Layer'+'\n'
                 'MantaTermAcPiso,         !- Layer 2'+'\n'
                 'Contrapiso,              !- Layer 3'+'\n'
                 'MadeiraLaminada;         !- Layer 4'+'\n'+'\n')
-piso_20 =('Construction,' +'\n'
+piso_20 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Laje,                    !- Outside Layer'+'\n'
                 'MantaTermAcPiso,         !- Layer 2'+'\n'
                 'Contrapiso,              !- Layer 3'+'\n'
                 'ArgamassaPiso            !- Layer 4'+'\n'
                 'Granito;                 !- Layer 5'+'\n'+'\n')
-piso_21 =('Construction,' +'\n'
+piso_21 = ('Construction,' +'\n'
                 'piso,                    !- Name'+'\n'
                 'Laje,                    !- Outside Layer'+'\n'
                 'MantaTermAcPiso,         !- Layer 2'+'\n'
@@ -275,65 +274,65 @@ piso_21 =('Construction,' +'\n'
 
 
     #Telhados
-cob_1 =('Construction,' +'\n'
+cob_1 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'RebocoCob,              !- Outside Layer'+'\n'
            'LajeConcreto,           !- Layer 2'+'\n'
            'Impermeabilizante;      !- Layer 3'+'\n'+'\n')
 
-cob_2 =('Construction,' +'\n'
+cob_2 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'RebocoCob,              !- Outside Layer'+'\n'
            'LajeTrelicada2e5,       !- Layer 2'+'\n'
            'Impermeabilizante;      !- Layer 3'+'\n'+'\n')
 
-cob_3 =('Construction,' +'\n'
+cob_3 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'RebocoCob,              !- Outside Layer'+'\n'
            'LajeTrelicada3,         !- Layer 2'+'\n'
            'Impermeabilizante;      !- Layer 3'+'\n'+'\n')
 
-cob_4 =('Construction,' +'\n'
+cob_4 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'RebocoCob,              !- Outside Layer'+'\n'
            'LajeConcreto,           !- Layer 2'+'\n'
            'ref_camara_ar_cob,      !- Layer 3'+'\n'+'\n'
            'TelhaCeramica;          !- Layer 4'+'\n'+'\n')
 
-cob_5 =('Construction,' +'\n'
+cob_5 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'RebocoCob,              !- Outside Layer'+'\n'
            'LajeTrelicada2e5,       !- Layer 2'+'\n'
            'ref_camara_ar_cob,      !- Layer 3'+'\n'+'\n'
            'TelhaCeramica;          !- Layer 4'+'\n'+'\n')
 
-cob_101 =('Construction,' +'\n'
+cob_101 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'ForroMadeira,           !- Outside Layer'+'\n'
            'ref_camara_ar_cob,      !- Layer 2'+'\n'
            'TelhaConcreto;          !- Layer 3'+'\n'+'\n')
 
-cob_102 =('Construction,' +'\n'
+cob_102 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'ForroMadeira,           !- Outside Layer'+'\n'
            'ref_camara_ar_cob,      !- Layer 2'+'\n'
            'TelhaFibrocimento;      !- Layer 3'+'\n'+'\n')
 
-cob_103 =('Construction,' +'\n'
+cob_103 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'ForroMadeira,           !- Outside Layer'+'\n'
            'ref_camara_ar_cob,      !- Layer 2'+'\n'
            'MantaTermAcCob,         !- Layer 3'+'\n'
            'TelhaCeramica;          !- Layer 4'+'\n'+'\n')
 
-cob_104 =('Construction,' +'\n'
+cob_104 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'ForroMadeira,           !- Outside Layer'+'\n'
            'ref_camara_ar_cob,      !- Layer 2'+'\n'
            'MantaTermAcCob,         !- Layer 3'+'\n'
            'TelhaConcreto;          !- Layer 4'+'\n'+'\n')
 
-cob_105 =('Construction,' +'\n'
+cob_105 = ('Construction,' +'\n'
           'cob,                     !- Name'+'\n'
            'ForroMadeira,           !- Outside Layer'+'\n'
            'ref_camara_ar_cob,      !- Layer 2'+'\n'
@@ -350,14 +349,14 @@ setup_porta = ('Construction,' +'\n'
             'Compensado;              !- Outside Layer'+'\n'+'\n' )
 
 # Listas
-lista_cob=[cob_1,cob_2,cob_3,cob_4,cob_5,cob_101,cob_102,cob_103,cob_104,cob_105]
-lista_pisos = [piso_2,piso_5,piso_7,piso_10,piso_14,piso_16,piso_18,piso_19,piso_20,piso_21]
-lista_paredes_int = [parede_1,parede_2,parede_10,parede_11,parede_14,parede_28,parede_33,parede_34,parede_36int,parede_39int]
-lista_paredes_ext=[parede_1ext,parede_2ext,parede_10ext,parede_11ext,parede_14ext,parede_28ext,parede_33ext,parede_34ext,parede_36ext,parede_39ext]
+lista_cob = [cob_1, cob_2, cob_3, cob_4, cob_5, cob_101, cob_102, cob_103, cob_104, cob_105]
+lista_pisos = [piso_2, piso_5, piso_7, piso_10, piso_14, piso_16, piso_18, piso_19, piso_20, piso_21]
+lista_paredes_int = [parede_1, parede_2, parede_10, parede_11, parede_14, parede_28, parede_33, parede_34, parede_36int, parede_39int]
+lista_paredes_ext = [parede_1ext, parede_2ext, parede_10ext, parede_11ext, parede_14ext, parede_28ext, parede_33ext, parede_34ext, parede_36ext, parede_39ext]
 
 diretorio_atual = 'D:\IC\prototipo16000\escrita' #trocar diretorio
 lista_arquivos = []
 
-path_files(diretorio_atual,lista_arquivos)
-escrita_arquivos(lista_arquivos,lista_pisos,lista_cob,lista_paredes_ext,lista_paredes_int,setup_porta,setup_janela)
+path_files(diretorio_atual, lista_arquivos)
+escrita_arquivos(lista_arquivos, lista_pisos, lista_cob, lista_paredes_ext, lista_paredes_int, setup_porta, setup_janela)
 
