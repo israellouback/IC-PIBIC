@@ -3,6 +3,7 @@ import os
 
      #Obtencao da Carga termica Atual e Carga Termica Atual nos hórarios de Pico.
 
+
 def path_files(diretorio_atual,lista_arquivos):
     for root, dirs, files in os.walk(diretorio_atual):
         for filename in files:
